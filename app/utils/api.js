@@ -9,8 +9,15 @@ var _APIKEY = '';
 // function prepUrl () {
 // }
 //
-// function getQueryStringData () {
-// }
+
+function getQueryStringData (city) {
+  return {
+    q: city,
+    type: 'accurate',
+    APPID: _APIKEY,
+    cnt: 5
+  }
+}
 
 function getCurrentWeather (city) {
   var queryStringData = getQueryStringData(city);
