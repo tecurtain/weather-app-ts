@@ -33,10 +33,17 @@ function getCurrentWeather (city) {
     })
 }
 
-// function getForcast () {
-// }
+function getForcast (city) {
+  var queryStringData = getQueryStringData(city);
+  var url = prepUrl('forecast/daily', queryStringData)
+
+  return axios.get(url)
+    .then(function (forecastData) {
+      return forecastData.data
+    })
+}
 
 module.exports = {
   getCurrentWeather: getCurrentWeather,
-  // getForcast: getForcast
+  getForcast: getForcast
 };
