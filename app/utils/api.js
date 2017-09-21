@@ -8,7 +8,6 @@ var _APIKEY = '';
 
 // function prepUrl () {
 // }
-//
 
 function getQueryStringData (city) {
   return {
@@ -29,6 +28,10 @@ function getCurrentWeather (city) {
     })
 }
 
+// function getForcast () {
+// }
+
 module.exports = {
-  getCurrentWeather: getCurrentWeather
+  getCurrentWeather: getCurrentWeather,
+  // getForcast: getForcast
 };
