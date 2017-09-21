@@ -3,11 +3,16 @@ var axios = require('axios');
 var _baseURL = 'http://api.openweathermap.org/data/2.5/';
 var _APIKEY = '';
 
-// function prepRouteParams () {
-// }
+function prepRouteParams (queryStringData) {
+  return Object.keys(queryStringData)
+    .map(function (key) {
+      return key + '=' + encodeURIComponent(queryStringData[key]);
+    }).join('&')
+}
 
-// function prepUrl () {
-// }
+function prepUrl (type, queryStringData) {
+  return _baseURL + type + '?' + prepRouteParams(queryStringData);
+}
 
 function getQueryStringData (city) {
   return {
